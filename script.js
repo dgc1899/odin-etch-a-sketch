@@ -2,6 +2,12 @@ const body = document.querySelector("body");
 const divGrid = document.querySelector(".grid");
 const btnReset = document.querySelector("button");
 
+let opacityCounter = 0.1;
+
+function getRandomRGB() {
+    return Math.floor(Math.random() * 255);
+}
+
 function getSquareWidth(squareNumber) {
     let width = divGrid.offsetWidth;
     return width / squareNumber;
@@ -13,7 +19,11 @@ function getSquareHeight(squareNumber) {
 
 function squareHover(e) {
     if (e.target !== e.currentTarget) {
-        e.target.style.backgroundColor = "black";
+        e.target.style.backgroundColor = `rgb(${getRandomRGB()} ${getRandomRGB()} ${getRandomRGB()})`;
+        e.target.style.opacity = opacityCounter;
+        if (opacityCounter < 1) {
+            opacityCounter += 0.1;
+        } 
     }
 }
 
