@@ -10,11 +10,11 @@ function getRandomRGB() {
 
 function getSquareWidth(squareNumber) {
     let width = divGrid.offsetWidth;
-    return width / squareNumber;
+    return width / squareNumber - 1;
 }
 function getSquareHeight(squareNumber) {
     let height = divGrid.offsetHeight;
-    return height / squareNumber;
+    return height / squareNumber - 1;
 }
 
 function squareHover(e) {
@@ -36,6 +36,7 @@ function resetGrid() {
     if(size > 0 && size <= 100) {
         deleteGrid();
         createGrid(size);
+        opacityCounter = 0.1;
     }
     else {
         alert("Invalid value, please enter a number between 1 and 100");
@@ -59,5 +60,5 @@ function createGrid(squareNumber) {
     }
 }
 
-createGrid(100);
+createGrid(5);
 setEventListeners();
