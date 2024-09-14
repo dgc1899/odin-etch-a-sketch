@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+}
+
+.grid {
+    width: 420px;
+    height:420px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gridSquare {
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+}
